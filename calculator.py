@@ -7,19 +7,26 @@ def main():
     window.title("Scientific Calculator")
     global entry
     entry = tk.Entry(window, width=45, borderwidth=5)
-    entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+    entry.grid(row=0, column=0, columnspan=6, padx=10, pady=10)
 
     # Creating the buttons using loops and the calculate function
-    button_labels = ['C', 'CE', 'π', '√', 'cosθ', 'tanθ', 'sinθ', '2π', 'cosh', 'tanh', 'sinh', '^3', '^2', 'ln', 'deg', 'rad', 'e', 'log10', 'x!', '7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '0', '.', '+', '=']
+    button_labels = ['C', 'CE', '(', ')', 'π','2π',
+                     'cosθ', 'tanθ', 'sinθ', 'arcsin', 'arccos', 'arctan',
+                     'sinh', 'cosh', 'tanh', 'log10','ln', 'deg',
+                     '√', '^3', '^2','e', 'rad',
+                    'x!', '7', '8', '9', '0', '+', '*',
+                      '4', '5', '6','.','-', '/','1',
+                     '2', '3',
+                      '', '', '=']
 
     # Creating the buttons with loops
     row_count = 1
     col_count = 0
     for button_label in button_labels:
-        button = tk.Button(window, text=button_label, padx=40, pady=20, command=lambda btn=button_label: calculate(btn))
+        button = tk.Button(window, text=button_label, padx=20, pady=10, width = 5, height = 3, command=lambda btn=button_label: calculate(btn))
         button.grid(row=row_count, column=col_count)
         col_count += 1
-        if col_count > 3:
+        if col_count > 5:
             row_count += 1
             col_count = 0
 
@@ -70,19 +77,19 @@ def calculate(value):
         elif value == chr(8731):
             result = eval(ex) ** (1 / 3)
 
-        elif value == 'x^2':
+        elif value == '^2':
             result = eval(ex) ** 2
 
-        elif value == 'x^3':
+        elif value == '^3':
             result = eval(ex) ** 3
 
         elif value == 'ln':
-            result = math.log2(eval(ex))
+            result = math.log(eval(ex))
 
         elif value == 'deg':
             result = math.degrees(eval(ex))
 
-        elif value == "rad":
+        elif value == 'rad':
             result = math.radians(eval(ex))
 
         elif value == 'e':
@@ -94,9 +101,17 @@ def calculate(value):
         elif value == 'x!':
             result = math.factorial(eval(ex))
 
-        elif value == '/':
-            entry.insert(tk.END, '/')
-            return
+        elif value == 'arcsin':
+            result = math.asin(eval(ex))
+
+        elif value == 'arccos':
+            result = math.acos(eval(ex))
+
+        elif value == 'arctan':
+            result = math.atan(eval(ex))
+
+        elif value == 'x!':
+            result = math.factorial(eval(ex))
 
         elif value == '=':
             result = eval(ex)
