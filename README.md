@@ -1,36 +1,28 @@
-# scientific-calculator
-scientific-calculator
+# Scientific Calculator
+    #### Video Demo:  https://youtu.be/Jh41f2NyrGw
+    #### Description:
 
-Scientific-calculator is a simple graphical user interface (GUI) calculator built using the tkinter library in Python. It provides a basic set of arithmetic operations and some additional functions like clearing the display and displaying text.
+    This is a scientific calculator that allows you to perform a variety of mathematical operations. It includes many of the common functions you would find in a standard scientific calculator, such as trigonometric functions, logarithms, and factorial.
 
-Features
-Basic arithmetic operations: addition, subtraction, multiplication, and division.
-Clear display: 'C' button will clear the display.
-Display text: '$' and '@' buttons will display text.
-Negate a number: 'Neg' button will change the sign of the displayed number.
+    Features
+    Simple user interface with a single input field and a variety of buttons for different operations
+    Supports basic arithmetic operations such as addition, subtraction, multiplication, and division
+    Includes more advanced functions like trigonometric functions, logarithms, and factorial
+    Allows you to switch between degrees and radians for trigonometric functions
+    Includes constants such as pi and e for use in calculations
+    Provides error handling to prevent invalid calculations
+    How to Use
+    To use the calculator, simply enter a mathematical expression using the buttons provided. You can click on the buttons to input different functions and operators, and the calculator will update the input field accordingly. When you are ready to perform the calculation, click the equals (=) button to see the result.
 
+    You can switch between degrees and radians by clicking on the "deg" and "rad" buttons, respectively.
 
-Requirements
-Python 3
-tkinter library
-math library
+    If you make a mistake while entering an expression, you can use the "CE" button to clear the last entry or the "C" button to clear the entire input field.
 
+    Requirements
+    This calculator requires Python 3 and the tkinter library, which is typically included with Python distributions.
 
-Usage
-Clone the repository to your local machine:
-$ git clone https://github.com/sulabhkatila/scientific-calculator.git
-
-Navigate to the project directory:
-$ cd scientific-calculator
-
-Run the following command to start the calculator:
-$ python calculator.py
-
-Use the buttons to perform arithmetic operations and other functions.
-
-Contributing
-If you would like to contribute to the project, feel free to create a pull request with your changes.
-
+    How to Run
+    To run the calculator, simply run the calculator.py file in a Python environment. This will open a graphical user interface (GUI) for the calculator.
 
 
 
