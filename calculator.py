@@ -1,5 +1,7 @@
 import tkinter as tk
 import math
+import speech_recognition as sr
+from sympy.parsing.sympy_parser import (parse_expr, standard_transformations, implicit_multiplication_application)
 
 def main():
     # Creating the main window
@@ -29,6 +31,8 @@ def main():
         if col_count > 5:
             row_count += 1
             col_count = 0
+    button = tk.Button(window, text="Microphone", padx=20, pady=10, width = 5, height = 3, command=audio)
+    button.grid(row=7, column=3)
 
     # Running the main loop
     window.mainloop()
@@ -125,6 +129,29 @@ def calculate(value):
 
     except SyntaxError:
         pass
+
+def audio():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Speak:")
+        audio = r.listen(source)
+
+    try:
+        # Use Google speech recognition to convert speech to text
+        text = r.recognize_google(audio)
+        print("You said: " + text)
+
+        # Parse and evaluate the math expression
+        transformations = (standard_transformations + (implicit_multiplication_application,))
+        expr = parse_expr(text, transformations=transformations)
+        result = float(expr.evalf())
+
+        # Output the result
+        print("Result: ", result)
+    except sr.UnknownValueError:
+        print("Google Speech Recognition could not understand audio")
+    except sr.RequestError as e:
+        print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
 def add(a, b):
     return a + b
