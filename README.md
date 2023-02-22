@@ -1,5 +1,5 @@
 # Scientific Calculator
-    #### Video Demo:  https://youtu.be/Jh41f2NyrGw
+
     #### Description:
 
     This is a scientific calculator that allows you to perform a variety of mathematical operations. It includes many of the common functions you would find in a standard scientific calculator, such as trigonometric functions, logarithms, and factorial.
@@ -17,6 +17,8 @@
     You can switch between degrees and radians by clicking on the "deg" and "rad" buttons, respectively.
 
     If you make a mistake while entering an expression, you can use the "CE" button to clear the last entry or the "C" button to clear the entire input field.
+
+    You can use the microphone button to give vioce commands to the calculator. A sample command: "What is 2 plus 2?"
 
     Requirements
     This calculator requires Python 3 and the tkinter library, which is typically included with Python distributions.
